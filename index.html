@@ -7,33 +7,25 @@
     <style>
         :root { --fsc-gold: #c5a059; --fsc-dark: #1a1a1a; --fsc-light: #f4f4f4; }
         body { background-color: var(--fsc-light); color: var(--fsc-dark); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
-        
-        /* Header & Logo */
         .fsc-header { background: var(--fsc-dark); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--fsc-gold); }
         .fsc-logo { font-size: 2.2em; font-weight: 300; letter-spacing: 4px; margin: 0; text-transform: uppercase; }
         .subtitle { color: var(--fsc-gold); font-size: 0.9em; margin-top: 5px; opacity: 0.8; }
-
         .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-
-        /* Section Styling */
         .section { background: white; padding: 30px; border-radius: 2px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border-right: 4px solid var(--fsc-gold); }
         h2 { border-bottom: 1px solid #eee; padding-bottom: 10px; font-weight: 400; color: #333; }
-
-        /* Guide & Info */
         .guide-box { background: #fdfdfd; border: 1px solid #eee; padding: 20px; margin: 20px 0; font-size: 0.95em; }
         .step { margin-bottom: 15px; }
         .step-num { font-weight: bold; color: var(--fsc-gold); margin-left: 10px; }
-
-        /* Tech Modules */
         .tech-interface { background: #fafafa; border: 1px solid #ddd; padding: 20px; text-align: center; }
         .id-display { background: #222; color: #eee; padding: 15px; font-family: monospace; font-size: 0.85em; text-align: left; direction: ltr; word-break: break-all; margin-top: 15px; display: none; }
-        
-        /* Buttons */
-        .btn { background: var(--fsc-dark); color: white; border: none; padding: 12px 30px; cursor: pointer; text-transform: uppercase; font-size: 0.9em; transition: 0.4s; border: 1px solid transparent; }
+        .btn { background: var(--fsc-dark); color: white; border: none; padding: 12px 30px; cursor: pointer; text-transform: uppercase; font-size: 0.9em; transition: 0.4s; border: 1px solid transparent; width: 100%; max-width: 350px; text-decoration: none; display: inline-block; }
         .btn:hover { background: white; color: var(--fsc-dark); border-color: var(--fsc-dark); }
-        .btn-gold { background: var(--fsc-gold); color: white; }
-        .btn-gold:hover { background: #b08d4b; }
-
+        .btn-gold { background: var(--fsc-gold); color: white; margin-bottom: 10px; }
+        .links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .link-card { border: 1px solid #eee; padding: 20px; text-decoration: none; color: inherit; text-align: center; transition: 0.3s; background: #fff; border-bottom: 3px solid transparent; }
+        .link-card:hover { border-color: var(--fsc-gold); background: #f9f9f9; border-bottom-color: var(--fsc-gold); }
+        .link-card h4 { margin: 0 0 10px 0; color: var(--fsc-gold); }
+        .telegram-link { grid-column: span 2; border-color: #24A1DE; color: #24A1DE; font-weight: bold; }
         footer { text-align: center; font-size: 0.8em; color: #888; padding: 40px; }
     </style>
 </head>
@@ -46,7 +38,7 @@
 
 <div class="container">
     
-    <!-- הסבר רשמי ומדריך -->
+    <!-- הסבר למשתמש -->
     <div class="section">
         <h2>📜 אבטחת זהות וריבונות: פרוטוקול FSC-01</h2>
         <p>מועצת הריבונות החופשית פועלת לביסוס אוטונומיה אישית מוחלטת. כחלק מפעילות זו, המועצה מאשרת את השימוש בתשתית הצפנה מקומית ליצירת זהות שאינה ניתנת לזיוף או למחיקה.</p>
@@ -58,7 +50,7 @@
         </div>
     </div>
 
-    <!-- ממשק טכנולוגי -->
+    <!-- הנפקת זהות -->
     <div class="section tech-interface">
         <h3>הנפקת זהות ריבונית</h3>
         <p>לחץ להפעלת פרוטוקול ההנפקה המאובטח</p>
@@ -71,11 +63,32 @@
         </div>
     </div>
 
-    <!-- רישום -->
+    <!-- רישום ואישור -->
     <div class="section" style="text-align: center;">
         <h3>אישור ועגינה במטה</h3>
         <p>שליחת המפתח הציבורי להכרה רשמית במסד הנתונים של ה-FSC</p>
         <button class="btn" onclick="registerSovereign()">Register to FSC Base</button>
+    </div>
+
+    <!-- חלק חדש: אמנות ותקשורת -->
+    <div class="section">
+        <h2>📂 ארכיון רשמי וערוצי קשר</h2>
+        <div class="links-grid">
+            <!-- אמנת הריבונות -->
+            <a href="https://substack.com" target="_blank" class="link-card">
+                <h4>🦅 אמנת הריבונות</h4>
+                <p style="font-size: 0.85em;">מסמך היסוד והחזון</p>
+            </a>
+            <!-- אמנת הביטחון -->
+            <a href="https://substack.com/note/c-232965626" target="_blank" class="link-card">
+                <h4>🛡️ אמנת הביטחון</h4>
+                <p style="font-size: 0.85em;">פרוטוקול ההגנה המשותף</p>
+            </a>
+            <!-- טלגרם - כאן להחליף קישור! -->
+            <a href="https://t.me/HumanFreedomIL" target="_blank" class="link-card telegram-link">
+                📱 ערוץ הטלגרם הרשמי - עדכונים בזמן אמת
+            </a>
+        </div>
     </div>
 
 </div>
@@ -86,14 +99,13 @@
 
 <script>
     function generateKeys() {
-        const pub = "FSC-ID-" + Math.random().toString(36).substr(2, 12).toUpperCase();
+        const pub = "FSC-ID-" + Math.random().toString(36).substr(2, 10).toUpperCase();
         const priv = "FSC-SEC-" + btoa(Math.random().toString()).substr(10, 32);
         document.getElementById('pubKey').innerText = pub;
         document.getElementById('privKey').innerText = priv;
         document.getElementById('idOutput').style.display = 'block';
         alert("פרוטוקול הושלם: הזהות נוצרה ומאובטחת במכשירך.");
     }
-
     function registerSovereign() {
         const pubKey = document.getElementById('pubKey').innerText;
         if (!pubKey) { alert("שגיאה: יש להנפיק זהות לפני הרישום."); return; }
@@ -103,6 +115,5 @@
         window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
 </script>
-
 </body>
 </html>
