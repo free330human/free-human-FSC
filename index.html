@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מועצת הריבונות החופשית | האתר הרשמי</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --navy: #001529;
+            --white: #ffffff;
+            --text: #e0e0e0;
+        }
+        body {
+            background-color: var(--navy);
+            color: var(--text);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            max-width: 700px;
+            width: 90%;
+            padding: 50px 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+        .logo-placeholder {
+            font-size: 60px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        h1 {
+            color: var(--gold);
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        .tagline {
+            color: var(--gold);
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        .content {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: var(--text);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-button {
+            background-color: var(--gold);
+            color: var(--navy);
+            padding: 18px 45px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+        .cta-button:hover {
+            background-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+        }
+        .footer-links {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .footer-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .card { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <span class="logo-placeholder">🛡️</span>
+        <h1>מועצת הריבונות החופשית</h1>
+        <div class="tagline">LIBERTAS ET SOVEREIGNTY</div>
+        <div class="content">
+            <p>אנו פועלים לביצור זכויות היסוד של האדם, חשיפת האמת המוחלטת והשבת הריבונות המלאה לידי הפרט.</p>
+        </div>
+        <a href="https://tinyurl.com" class="btn cta-button">לחתימה אנונימית על האמנה</a>
+        <div class="footer-links">
+            <p>ערוץ עדכונים מאובטח: <a href="https://t.me" target="_blank">@HumanFreedomIL</a></p>
+        </div>
+    </div>
+</body>
+</html>
