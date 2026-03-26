@@ -305,5 +305,74 @@ function drawCertificate(id, name) {
 }
 </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+let steps = [false,false,false];
+
+function done(i){
+    steps[i-1] = true;
+    document.getElementById("t"+i).classList.add("done");
+    if(steps.every(v=>v)){
+        document.getElementById("certificateForm").classList.remove("hidden");
+    }
+}
+
+function saveGeneratedID(id, name, email){
+    let list = JSON.parse(localStorage.getItem("FSC_IDS") || "[]");
+    list.push({id,name,email,date:new Date().toISOString()});
+    localStorage.setItem("FSC_IDS", JSON.stringify(list));
+}
+
+function getAllGeneratedIDs(){
+    return JSON.parse(localStorage.getItem("FSC_IDS") || "[]");
+}
+
+async function generateFSC(){
+    const { jsPDF } = window.jspdf;
+    const name = document.getElementById("userName").value.trim();
+    const email = document.getElementById("userEmail").value.trim();
+
+    if(!name || !email){ alert("יש להזין שם ואימייל"); return; }
+
+    const id = "FSC-" + Date.now();
+    saveGeneratedID(id,name,email);
+
+    drawCertificate(id,name);
+
+    const canvas = document.getElementById("certificateCanvas");
+    const pdf = new jsPDF({orientation:"landscape",unit:"px",format:[canvas.width,canvas.height]});
+    const imgData = canvas.toDataURL("image/png");
+    pdf.addImage(imgData,'PNG',0,0,canvas.width,canvas.height);
+
+    pdf.save(`${name}_FSC_Certificate.pdf`);
+}
+
+function drawCertificate(id,name){
+    const canvas = document.getElementById("certificateCanvas");
+    canvas.classList.remove("hidden");
+    const ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "#1a1a2e";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    ctx.fillStyle = "#FFD700";
+    ctx.beginPath();
+    ctx.moveTo(50,50);
+    ctx.lineTo(150,50);
+    ctx.lineTo(100,150);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.font = "bold 48px Arial";
+    ctx.fillText(name,canvas.width/2,180);
+
+    ctx.shadowColor = "#00eaff";
+    ctx.shadowBlur = 20;
+    ctx.fillStyle = "white";
+    ctx.font = "36px Arial";
+    ctx.fillText(id,canvas.width/2,300);
+}
+</script>
 </body>
 </html>
