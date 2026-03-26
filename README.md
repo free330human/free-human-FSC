@@ -1,20 +1,18 @@
-# free-human-FSC
--מועצת הריבונות החופשית-ביצור חירות האדם
 # 📚 ספריית הפרוטוקולים והמסמכים של ארגון (FSC)
 
-ברוכים הבאים למרכז המידע המאורגן. לצפייה או הורדה של המסמכים בחלון חדש, לחצו על הכפתורים:
+לחצו על כפתור לצפייה ישירה או הורדה של המסמך בחלון חדש:
 
 
-| שם המסמך / הפרוטוקול | פעולה (נפתח בחלון חדש) |
+| שם המסמך / הפרוטוקול | פעולה (פתיחה ישירה) |
 | :--- | :--- |
-| 📜 **תעודת ה-FSC הראשונה** | <a href="https://github.com" target="_blank">👁️ לצפייה והורדה</a> |
-| 🤝 **רשת הסיירים** | <a href="https://github.com" target="_blank">👁️ לצפייה והורדה</a> |
-| 🆔 **תעודת ריבונות** | <a href="https://github.com" target="_blank">👁️ לצפייה והורדה</a> |
-| ⚙️ **איפוס מערכת** | <a href="https://github.com" target="_blank">👁️ לצפייה והורדה</a> |
-| 👁️ **עין פקוחה** | <a href="https://github.com" target="_blank">👁️ לצפייה והורדה</a> |
-| 🌱 **בראשית** | <a href="https://github.com" target="_blank">👁️ לצפייה והורדה</a> |
-| 📜 **פרוטוקול השחרור** | <a href="https://github.com" target="_blank">👁️ לצפייה והורדה</a> |
-| 🏠 **דף הבית** | <a href="https://github.com" target="_blank">👁️ לצפייה והורדה</a> |
+| 📜 **תעודת ה-FSC הראשונה** | <a href="https://raw.githubusercontent.com" target="_blank">👁️ פתיחת מסמך</a> |
+| 🤝 **רשת הסיירים** | <a href="https://raw.githubusercontent.com" target="_blank">👁️ פתיחת מסמך</a> |
+| 🆔 **תעודת ריבונות** | <a href="https://raw.githubusercontent.com" target="_blank">👁️ פתיחת מסמך</a> |
+| ⚙️ **איפוס מערכת** | <a href="https://raw.githubusercontent.com" target="_blank">👁️ פתיחת מסמך</a> |
+| 👁️ **עין פקוחה** | <a href="https://raw.githubusercontent.com" target="_blank">👁️ פתיחת מסמך</a> |
+| 🌱 **בראשית** | <a href="https://raw.githubusercontent.com" target="_blank">👁️ פתיחת מסמך</a> |
+| 📜 **פרוטוקול השחרור** | <a href="https://raw.githubusercontent.com" target="_blank">👁️ פתיחת מסמך</a> |
+| 🏠 **דף הבית** | <a href="https://raw.githubusercontent.com" target="_blank">👁️ פתיחת מסמך</a> |
 
 ---
-*כל המסמכים מוגנים וזמינים לקריאה ישירה בממשק מאובטח.*
+*לחיצה על הכפתור תפתח את הקובץ המקורי בנפרד מהאתר.*
