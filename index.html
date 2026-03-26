@@ -163,14 +163,21 @@ opacity:0.5;
 </div>
 
 </div>
+<!-- טופס ליצירת תעודה -->
+<div id="certificateForm" class="hidden">
+  <h3>קבל את תעודת ה‑FSC שלך</h3>
+  <input type="text" id="userName" placeholder="שם מלא"><br><br>
+  <input type="email" id="userEmail" placeholder="אימייל"><br><br>
+  <button class="btn" onclick="generateFSC()">קבל תעודה</button>
+  <br><br>
+</div>
 
+<!-- Canvas שבו תצויר התעודה -->
+<canvas id="certificateCanvas" width="900" height="600" class="hidden"></canvas>
 <button class="btn hidden" id="finalBtn" onclick="sendMail()">
 השלם הצטרפות
 </button>
-<input type="text" id="userName" placeholder="שם מלא">
-<input type="email" id="userEmail" placeholder="אימייל">
-<button onclick="generateFSC()">קבל תעודה</button>
-<canvas id="certificateCanvas" width="800" height="600" class="hidden"></canvas>
+
 </section>
 
 <!-- ABOUT -->
@@ -224,6 +231,69 @@ window.location.href="mailto:The_FSC_Base@proton.me?subject=FSC Join Request&bod
 }
 
 </script>
+<script>
+let steps = [false, false, false];
 
+// סימון משימה כ‑done
+function done(i) {
+    steps[i-1] = true;
+    document.getElementById("t"+i).classList.add("done");
+    if (steps.every(v => v)) {
+        document.getElementById("certificateForm").classList.remove("hidden");
+    }
+}
+
+// יצירת FSC
+function generateFSC() {
+    const name = document.getElementById("userName").value.trim();
+    const email = document.getElementById("userEmail").value.trim();
+
+    if (!name || !email) {
+        alert("יש להזין שם ואימייל כדי להנפיק תעודה");
+        return;
+    }
+
+    // יצירת מספר סידורי
+    const id = "FSC-" + Date.now();
+
+    saveGeneratedID(id, name, email);
+    drawCertificate(id, name);
+}
+
+// שמירת רשומות ב‑LocalStorage
+function saveGeneratedID(id, name, email) {
+    let list = JSON.parse(localStorage.getItem("FSC_IDS") || "[]");
+    list.push({ id, name, email, date: new Date().toISOString() });
+    localStorage.setItem("FSC_IDS", JSON.stringify(list));
+}
+
+function getAllGeneratedIDs() {
+    return JSON.parse(localStorage.getItem("FSC_IDS") || "[]");
+}
+
+// ציור התעודה
+function drawCertificate(id, name) {
+    const canvas = document.getElementById("certificateCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.classList.remove("hidden");
+
+    // רקע
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // שם
+    ctx.fillStyle = "black";
+    ctx.font = "36px Arial";
+    ctx.textAlign = "center";
+    ctx.fillText(name, canvas.width/2, 180);
+
+    // ID עם Glow
+    ctx.shadowColor = "#00eaff";
+    ctx.shadowBlur = 25;
+    ctx.fillStyle = "black";
+    ctx.font = "48px Arial bold";
+    ctx.fillText(id, canvas.width/2, 300);
+}
+</script>
 </body>
 </html>
