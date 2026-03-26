@@ -139,7 +139,16 @@ opacity:0.5;
 <!-- JOIN -->
 <section class="section" id="join">
 <h2>הצטרפות ל־FSC</h2>
+<!-- ✨ טופס יצירת תעודה -->
+<div id="certificateForm" class="hidden">
+  <h3>קבל את תעודת ה‑FSC שלך</h3>
+  <input type="text" id="userName" placeholder="שם מלא"><br><br>
+  <input type="email" id="userEmail" placeholder="אימייל"><br><br>
+  <button onclick="generateFSC()">קבל תעודה</button><br><br>
+</div>
 
+<!-- 🎨 Canvas להצגת תעודה -->
+<canvas id="certificateCanvas" width="900" height="600" class="hidden"></canvas>
 <div id="tasks">
 
 <div class="task" id="t1">
