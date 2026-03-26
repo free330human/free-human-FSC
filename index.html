@@ -82,10 +82,115 @@
         <p>שליחת המפתח הציבורי להכרה רשמית במסד הנתונים של ה-FSC</p>
         <button class="btn" onclick="registerSovereign()">Register to FSC Base</button>
     </div> 
-    <div style="text-align: center; margin: 20px 0;">
-    <a href="library.html" style="background-color: #d4af37; color: white; padding: 15px 30px; text-decoration: none; font-size: 20px; font-weight: bold; border-radius: 8px; display: inline-block; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-        📂 כניסה לספריית הפרוטוקולים והמסמכים
-    </a>
+  <!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ארכיון הפרוטוקולים הרשמי - FSC</title>
+    <style>
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: #121212; color: #e0e0e0; margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: auto; }
+        .header { text-align: center; padding: 40px 0; border-bottom: 2px solid #d4af37; margin-bottom: 30px; }
+        h1 { color: #d4af37; margin: 0; font-size: 2.2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .doc-card { background: #1e1e1e; margin-bottom: 20px; padding: 25px; border-radius: 12px; border-right: 5px solid #d4af37; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.2s; }
+        .doc-card:hover { transform: translateY(-3px); background: #252525; }
+        .doc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .doc-title { font-size: 1.3rem; font-weight: bold; color: #fff; }
+        .doc-desc { color: #aaa; font-size: 0.95rem; margin-bottom: 20px; }
+        .actions { display: flex; gap: 12px; }
+        .btn { flex: 1; text-decoration: none; padding: 12px; border-radius: 6px; text-align: center; font-weight: bold; transition: 0.3s; font-size: 1rem; border: none; cursor: pointer; }
+        .view-btn { background: #d4af37; color: #000; }
+        .view-btn:hover { background: #f1c40f; }
+        .down-btn { background: #333; color: #fff; }
+        .down-btn:hover { background: #444; }
+        .back-link { display: block; text-align: center; margin-top: 40px; color: #d4af37; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>📜 ארכיון המסמכים הרשמי</h1>
+        <p>מרכז הידע והפרוטוקולים של הארגון</p>
+    </div>
+
+    <!-- 1. בראשית - היסוד -->
+    <div class="doc-card">
+        <div class="doc-header"><div class="doc-title">🌱 01. בראשית</div></div>
+        <div class="doc-desc">מסמך היסוד וההתחלה של התהליך.</div>
+        <div class="actions">
+            <a href="https://drive.google.com/file/d/1wgB8QjCHJFUCUJ8VTQqTJiFbHclQ7B0q/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
+            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+        </div>
+    </div>
+
+    <!-- 2. דף הבית - הקשר -->
+    <div class="doc-card">
+        <div class="doc-header"><div class="doc-title">🏠 02. דף הבית</div></div>
+        <div class="doc-desc">ריכוז המידע המרכזי למשתמש החדש.</div>
+        <div class="actions">
+            <a href="https://drive.google.com/file/d/1b48b5BP2O4RGWaDpiVwFiMsshQhIeywS/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
+            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+        </div>
+    </div>
+
+    <!-- 3. תעודת ריבונות - הזיהוי -->
+    <div class="doc-card">
+        <div class="doc-header"><div class="doc-title">🆔 03. תעודת ריבונות</div></div>
+        <div class="doc-desc">מסמך המגדיר את מעמד הריבונות והזיהוי.</div>
+        <div class="actions">
+            <a href="https://drive.google.com/file/d/1VTHOeK5qDuaDPnb_t2myS5-PODMrobLK/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
+            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+        </div>
+    </div>
+
+    <!-- 4. פרוטוקול השחרור - התהליך -->
+    <div class="doc-card">
+        <div class="doc-header"><div class="doc-title">📦 04. פרוטוקול השחרור</div></div>
+        <div class="doc-desc">הנחיות לביצוע תהליך השחרור המלא.</div>
+        <div class="actions">
+            <a href="https://drive.google.com/file/d/1wiYtG7B5AtINil5FCD7dtfVqk0LU85H4/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
+            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+        </div>
+    </div>
+
+    <!-- 5. איפוס מערכת - טכני -->
+    <div class="doc-card">
+        <div class="doc-header"><div class="doc-title">⚙️ 05. איפוס מערכת</div></div>
+        <div class="doc-desc">מדריך לביצוע איפוס מערכתי.</div>
+        <div class="actions">
+            <a href="https://drive.google.com/file/d/1L6QcyH24zQdKDOa4Y5JOR6xSkRI1GquQ/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
+            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+        </div>
+    </div>
+
+    <!-- 6. עין פקוחה - המודעות -->
+    <div class="doc-card">
+        <div class="doc-header"><div class="doc-title">👁️ 06. עין פקוחה</div></div>
+        <div class="doc-desc">פרוטוקול המודעות והשמירה על החופש.</div>
+        <div class="actions">
+            <a href="https://drive.google.com/file/d/1Be4pkFR99GW-vbJxO1b4qNneQ4ym3xwF/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
+            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+        </div>
+    </div>
+
+    <!-- 7. רשת הסיירים - קהילה -->
+    <div class="doc-card">
+        <div class="doc-header"><div class="doc-title">🤝 07. רשת הסיירים</div></div>
+        <div class="doc-desc">הנחיות לפעולה בתוך רשת הסיירים הקהילתית.</div>
+        <div class="actions">
+            <a href="https://drive.google.com/file/d/1jATeWvep-8QiqfuRJoanVZpWldGTjtZA/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
+            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">← חזרה לדף הבית</a>
+</div>
+
+</body>
+</html>
+
 </div>
 
 
