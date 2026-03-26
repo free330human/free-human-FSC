@@ -305,36 +305,38 @@
     <div class="subtitle">מערך הריבונות והביטחון הדיגיטלי | המטה הרשמי</div>
 </header>
 
-<div class="container">
+async function generateKeys() {
+    // יצירת מפתח אמיתי
+    const keyPair = await window.crypto.subtle.generateKey(
+        {
+            name: "RSA-PSS",
+            modulusLength: 2048,
+            publicExponent: new Uint8Array([1, 0, 1]),
+            hash: "SHA-256"
+        },
+        true,
+        ["sign", "verify"]
+    );
 
-    <div class="section">
-        <h2>📜 אבטחת זהות וריבונות: פרוטוקול FSC-01</h2>
-        <p>מועצת הריבונות החופשית פועלת לביסוס אוטונומיה אישית מוחלטת. כחלק מפעילות זו, המועצה מאשרת את השימוש בתשתית הצפנה מקומית ליצירת זהות שאינה ניתנת לזיוף או למחיקה.</p>
+    // ייצוא מפתחות
+    const publicKey = await crypto.subtle.exportKey("spki", keyPair.publicKey);
+    const privateKey = await crypto.subtle.exportKey("pkcs8", keyPair.privateKey);
 
-        <div class="guide-box">
-            <div class="step"><span class="step-num">01.</span> <strong>יצירת מפתחות:</strong> המערכת מייצרת שני מפתחות הצפנה. המפתח הציבורי (Public) הוא ה"זהות" שלך. המפתח הפרטי (Private) הוא ה"חתימה" שלך.</div>
-            <div class="step"><span class="step-num">02.</span> <strong>אבטחה מקומית:</strong> התהליך מתבצע בדפדפן שלך בלבד. שום מידע לא עובר לשרתים חיצוניים. הזהות שלך נשארת בשליטתך הבלעדית.</div>
-            <div class="step"><span class="step-num">03.</span> <strong>עגינה במערכת:</strong> לאחר יצירת הזהות, יש לשלוח את המפתח הציבורי לרישום במועצה לצורך קבלת הכרה רשמית.</div>
-        </div>
-    </div>
+    // המרה ל־Base64
+    const pubKeyBase64 = btoa(String.fromCharCode(...new Uint8Array(publicKey)));
+    const privKeyBase64 = btoa(String.fromCharCode(...new Uint8Array(privateKey)));
 
-    <div class="section tech-interface">
-        <h3>הנפקת זהות ריבונית</h3>
-        <p>לחץ להפעלת פרוטוקול ההנפקה המאובטח</p>
-        <button class="btn btn-gold" onclick="generateKeys()">Initialize Identity Protocol</button>
+    // שמירה בדפדפן
+    localStorage.setItem("FSC_PUBLIC_KEY", pubKeyBase64);
+    localStorage.setItem("FSC_PRIVATE_KEY", privKeyBase64);
 
-        <div id="idOutput" class="id-display">
-            <div style="color: var(--fsc-gold); margin-bottom: 10px;">// FSC IDENTITY GENERATED SUCCESSFULLY</div>
-            <strong>PUBLIC KEY (Share this):</strong><br><span id="pubKey"></span><br><br>
-            <strong>PRIVATE KEY (KEEP SECRET):</strong><br><span id="privKey"></span>
-        </div>
-    </div>
+    // הצגה באתר
+    document.getElementById('pubKey').innerText = pubKeyBase64;
+    document.getElementById('privKey').innerText = privKeyBase64;
+    document.getElementById('idOutput').style.display = 'block';
 
-    <div class="section" style="text-align: center;">
-        <h3>אישור ועגינה במטה</h3>
-        <p>שליחת המפתח הציבורי להכרה רשמית במסד הנתונים של ה-FSC</p>
-        <button class="btn" onclick="registerSovereign()">Register to FSC Base</button>
-    </div>
+    alert("זהות קריפטוגרפית אמיתית נוצרה בהצלחה.");
+}
 
     <div class="section">
         <h2>📜 ארכיון המסמכים הרשמי</h2>
