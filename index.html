@@ -2,377 +2,139 @@
 <html lang="he">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>FSC - Free Sovereignty Council</title>
-
+<title>Free Sovereignty Council – FSC</title>
 <style>
-body{
-margin:0;
-font-family:Arial;
-background:#070b14;
-color:white;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f0f5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
-
-/* NAV */
-nav{
-display:flex;
-justify-content:space-between;
-padding:20px;
-background:#0a0f1c;
-position:sticky;
-top:0;
+header {
+  background: #001f3f;
+  color: #fff;
+  padding: 20px 0;
+  font-size: 28px;
+  font-weight: bold;
 }
-
-nav a{
-color:#00eaff;
-text-decoration:none;
-margin:10px;
+h2 { color: #003366; margin: 20px 0; }
+.task-container {
+  display: inline-block;
+  text-align: right;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-
-/* HERO */
-.hero{
-text-align:center;
-padding:120px 20px;
+.task { margin: 12px 0; font-size: 18px; }
+input[type=text], input[type=email] {
+  padding: 10px;
+  margin: 5px 0;
+  width: 250px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
 }
-
-.hero h1{
-font-size:42px;
-color:#00eaff;
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #001f3f;
+  color: #fff;
+  margin-top: 15px;
 }
-
-.hero p{
-opacity:0.8;
-}
-
-/* BUTTON */
-.btn{
-padding:15px 30px;
-background:#00eaff;
-border:none;
-cursor:pointer;
-font-weight:bold;
-margin-top:20px;
-}
-
-/* SECTION */
-.section{
-padding:60px 20px;
-max-width:900px;
-margin:auto;
-}
-
-/* CARDS */
-.card{
-background:#11182b;
-padding:20px;
-margin:15px 0;
-border-radius:10px;
-}
-
-/* TASKS */
-.task{
-background:#11182b;
-padding:15px;
-margin:10px 0;
-border-radius:10px;
-}
-
-.done{
-border:2px solid #00ff88;
-}
-
-.hidden{
-display:none;
-}
-
-footer{
-text-align:center;
-padding:40px;
-opacity:0.5;
-}
+button:disabled { background: #888; cursor: not-allowed; }
+button:hover:enabled { background: #003366; }
 </style>
-
 </head>
-
 <body>
 
-<nav>
-<div>FSC</div>
-<div>
-<a href="#home">בית</a>
-<a href="#about">אודות</a>
-<a href="#join">הצטרפות</a>
-</div>
-</nav>
+<header>Free Sovereignty Council – FSC</header>
+<h2>סיים את כל המשימות וקבל את התעודה הרשמית שלך</h2>
 
-<!-- HERO -->
-<section class="hero" id="home">
-<h1>Free Sovereignty Council</h1>
-<p>זהות חופשית. שליטה עצמית. אלטרנטיבה אמיתית.</p>
-<p>העולם השתנה. הגיע הזמן לקחת שליטה חזרה.</p>
-
-<button class="btn" onclick="goJoin()">הצטרף ל־FSC</button>
-</section>
-
-<!-- PRINCIPLES -->
-<section class="section">
-<h2>עקרונות</h2>
-
-<div class="card">
-<h3>חופש האדם</h3>
-<p>האדם נולד חופשי. אינו שייך לאף מערכת.</p>
+<div class="task-container">
+  <div class="task"><input type="checkbox" id="task1"> משימה 1 – הצג את היצירה שלך</div>
+  <div class="task"><input type="checkbox" id="task2"> משימה 2 – שתף את הלינק לטיקטוק או טלגרם</div>
+  <div class="task"><input type="checkbox" id="task3"> משימה 3 – מלא שאלון הערכה</div>
 </div>
 
-<div class="card">
-<h3>זהות ריבונית</h3>
-<p>אתה לא מספר — אתה ישות עם שליטה על חייך.</p>
+<div style="margin-top:20px;">
+  <input type="text" id="userName" placeholder="הכנס שם מלא"><br>
+  <input type="email" id="userEmail" placeholder="הכנס מייל"><br>
+  <button id="generateBtn" disabled>קבל תעודה מקצועית</button>
 </div>
 
-<div class="card">
-<h3>בניית אלטרנטיבה</h3>
-<p>לא עוד תלות — אלא יצירת מציאות חדשה.</p>
-</div>
-
-</section>
-
-<!-- JOIN -->
-<section class="section" id="join">
-<h2>הצטרפות ל־FSC</h2>
-<!-- ✨ טופס יצירת תעודה -->
-<div id="certificateForm" class="hidden">
-  <h3>קבל את תעודת ה‑FSC שלך</h3>
-  <input type="text" id="userName" placeholder="שם מלא"><br><br>
-  <input type="email" id="userEmail" placeholder="אימייל"><br><br>
-  <button onclick="generateFSC()">קבל תעודה</button><br><br>
-</div>
-
-<!-- 🎨 Canvas להצגת תעודה -->
-<canvas id="certificateCanvas" width="900" height="600" class="hidden"></canvas>
-<div id="tasks">
-
-<div class="task" id="t1">
-1. הצטרף לטלגרם  
-<br><br>
-<a href="https://t.me/HumanFreedomIL" target="_blank" onclick="done(1)">כניסה</a>
-</div>
-
-<div class="task" id="t2">
-2. עקוב בטיקטוק  
-<br><br>
-<a href="https://www.tiktok.com/@fsc33council" target="_blank" onclick="done(2)">כניסה</a>
-</div>
-
-<div class="task" id="t3">
-3. אמנת ריבונות  
-<br><br>
-<input type="checkbox" onclick="done(3)">
-אני מצהיר כי אני מאמין בזכותי להיות חופשי,  
-נשאר נאמן ל־FSC ולוקח חלק בהפצת החופש.
-</div>
-
-</div>
-<!-- טופס ליצירת תעודה -->
-<div id="certificateForm" class="hidden">
-  <h3>קבל את תעודת ה‑FSC שלך</h3>
-  <input type="text" id="userName" placeholder="שם מלא"><br><br>
-  <input type="email" id="userEmail" placeholder="אימייל"><br><br>
-  <button class="btn" onclick="generateFSC()">קבל תעודה</button>
-  <br><br>
-</div>
-
-<!-- Canvas שבו תצויר התעודה -->
-<canvas id="certificateCanvas" width="900" height="600" class="hidden"></canvas>
-<button class="btn hidden" id="finalBtn" onclick="sendMail()">
-השלם הצטרפות
-</button>
-
-</section>
-
-<!-- ABOUT -->
-<section class="section" id="about">
-<h2>אודות</h2>
-
-<p>
-מועצת הריבונות החופשית (FSC) הוקמה מתוך הבנה
-שהמערכת המודרנית כבר אינה מייצגת חופש אמיתי.
-</p>
-
-<p>
-האדם הוגדר, סווג והוגבל — מבלי שבחר בכך.
-</p>
-
-<p>
-אנחנו לא מתנגדים בלבד —  
-אנחנו יוצרים אלטרנטיבה.
-</p>
-
-<p>
-FSC היא תנועה של אנשים שבוחרים לקחת שליטה על חייהם,
-לבנות זהות עצמאית ולהתחבר לקהילה עם חזון משותף.
-</p>
-
-</section>
-
-<footer>
-יצירת קשר: The_FSC_Base@proton.me
-</footer>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
+const tasks = ['task1','task2','task3'];
+const generateBtn = document.getElementById('generateBtn');
 
-let steps=[false,false,false];
-
-function done(i){
-steps[i-1]=true;
-document.getElementById("t"+i).classList.add("done");
-
-if(steps.every(v=>v)){
-document.getElementById("finalBtn").classList.remove("hidden");
-}
-}
-
-function goJoin(){
-document.getElementById("join").scrollIntoView({behavior:"smooth"});
+// בדיקה שכל המשימות הושלמו
+tasks.forEach(id => {
+  document.getElementById(id).addEventListener('change', checkTasks);
+});
+function checkTasks() {
+  generateBtn.disabled = !tasks.every(id => document.getElementById(id).checked);
 }
 
-function sendMail(){
-window.location.href="mailto:The_FSC_Base@proton.me?subject=FSC Join Request&body=I completed all steps.";
-}
+// יצירת התעודה
+generateBtn.addEventListener('click', async () => {
+  const { jsPDF } = window.jspdf;
+  const name = document.getElementById('userName').value.trim();
+  const email = document.getElementById('userEmail').value.trim();
+  
+  if(!name || !email){ alert("הכנס שם ומייל"); return; }
 
-</script>
-<script>
-let steps = [false, false, false];
+  // מספר סידורי ייחודי
+  let serialIndex = parseInt(localStorage.getItem('fscSerial')||'0') + 1;
+  localStorage.setItem('fscSerial', serialIndex);
+  const serial = `FSC-${serialIndex.toString().padStart(4,'0')}`;
 
-// סימון משימה כ‑done
-function done(i) {
-    steps[i-1] = true;
-    document.getElementById("t"+i).classList.add("done");
-    if (steps.every(v => v)) {
-        document.getElementById("certificateForm").classList.remove("hidden");
+  // שמירה אצל המנהל
+  let allSerials = JSON.parse(localStorage.getItem('fscAllSerials')||'[]');
+  allSerials.push({name, email, serial, date: new Date().toLocaleDateString()});
+  localStorage.setItem('fscAllSerials', JSON.stringify(allSerials));
+
+  const doc = new jsPDF('landscape', 'pt', 'a4');
+
+  // רקע התעודה
+  const bg = new Image();
+  bg.src = 'certificate.png'; // התעודה שלך
+  bg.onload = () => {
+    doc.addImage(bg, 'PNG', 0, 0, 842, 595);
+
+    // סימן מים
+    doc.setTextColor(200,200,200);
+    doc.setFontSize(60);
+    doc.text("FSC", 250, 300, { angle: 45, opacity: 0.1 });
+
+    // פרטי המשתמש
+    doc.setTextColor(0,0,0);
+    doc.setFontSize(28);
+    doc.text("תעודת FSC רשמית", 220, 180);
+    doc.setFontSize(20);
+    doc.text(`שם: ${name}`, 220, 230);
+    doc.text(`מייל: ${email}`, 220, 260);
+    doc.text(`מספר סידורי: ${serial}`, 220, 290);
+    const date = new Date().toLocaleDateString();
+    doc.text(`תאריך: ${date}`, 220, 320);
+
+    // חותמת / סמל
+    const stamp = new Image();
+    stamp.src = 'fsc_stamp.png';
+    stamp.onload = () => {
+      doc.addImage(stamp, 'PNG', 500, 400, 120, 120);
+
+      // הורדה אוטומטית
+      doc.save(`FSC_${serial}.pdf`);
+      alert("התעודה נוצרה בהצלחה! המספר הסידורי נשמר אצל המנהל.");
     }
-}
-
-// יצירת FSC
-function generateFSC() {
-    const name = document.getElementById("userName").value.trim();
-    const email = document.getElementById("userEmail").value.trim();
-
-    if (!name || !email) {
-        alert("יש להזין שם ואימייל כדי להנפיק תעודה");
-        return;
-    }
-
-    // יצירת מספר סידורי
-    const id = "FSC-" + Date.now();
-
-    saveGeneratedID(id, name, email);
-    drawCertificate(id, name);
-}
-
-// שמירת רשומות ב‑LocalStorage
-function saveGeneratedID(id, name, email) {
-    let list = JSON.parse(localStorage.getItem("FSC_IDS") || "[]");
-    list.push({ id, name, email, date: new Date().toISOString() });
-    localStorage.setItem("FSC_IDS", JSON.stringify(list));
-}
-
-function getAllGeneratedIDs() {
-    return JSON.parse(localStorage.getItem("FSC_IDS") || "[]");
-}
-
-// ציור התעודה
-function drawCertificate(id, name) {
-    const canvas = document.getElementById("certificateCanvas");
-    const ctx = canvas.getContext("2d");
-    canvas.classList.remove("hidden");
-
-    // רקע
-    ctx.fillStyle = "#fff";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // שם
-    ctx.fillStyle = "black";
-    ctx.font = "36px Arial";
-    ctx.textAlign = "center";
-    ctx.fillText(name, canvas.width/2, 180);
-
-    // ID עם Glow
-    ctx.shadowColor = "#00eaff";
-    ctx.shadowBlur = 25;
-    ctx.fillStyle = "black";
-    ctx.font = "48px Arial bold";
-    ctx.fillText(id, canvas.width/2, 300);
-}
-</script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script>
-let steps = [false,false,false];
-
-function done(i){
-    steps[i-1] = true;
-    document.getElementById("t"+i).classList.add("done");
-    if(steps.every(v=>v)){
-        document.getElementById("certificateForm").classList.remove("hidden");
-    }
-}
-
-function saveGeneratedID(id, name, email){
-    let list = JSON.parse(localStorage.getItem("FSC_IDS") || "[]");
-    list.push({id,name,email,date:new Date().toISOString()});
-    localStorage.setItem("FSC_IDS", JSON.stringify(list));
-}
-
-function getAllGeneratedIDs(){
-    return JSON.parse(localStorage.getItem("FSC_IDS") || "[]");
-}
-
-async function generateFSC(){
-    const { jsPDF } = window.jspdf;
-    const name = document.getElementById("userName").value.trim();
-    const email = document.getElementById("userEmail").value.trim();
-
-    if(!name || !email){ alert("יש להזין שם ואימייל"); return; }
-
-    const id = "FSC-" + Date.now();
-    saveGeneratedID(id,name,email);
-
-    drawCertificate(id,name);
-
-    const canvas = document.getElementById("certificateCanvas");
-    const pdf = new jsPDF({orientation:"landscape",unit:"px",format:[canvas.width,canvas.height]});
-    const imgData = canvas.toDataURL("image/png");
-    pdf.addImage(imgData,'PNG',0,0,canvas.width,canvas.height);
-
-    pdf.save(`${name}_FSC_Certificate.pdf`);
-}
-
-function drawCertificate(id,name){
-    const canvas = document.getElementById("certificateCanvas");
-    canvas.classList.remove("hidden");
-    const ctx = canvas.getContext("2d");
-
-    ctx.fillStyle = "#1a1a2e";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-
-    ctx.fillStyle = "#FFD700";
-    ctx.beginPath();
-    ctx.moveTo(50,50);
-    ctx.lineTo(150,50);
-    ctx.lineTo(100,150);
-    ctx.closePath();
-    ctx.fill();
-
-    ctx.fillStyle = "white";
-    ctx.textAlign = "center";
-    ctx.font = "bold 48px Arial";
-    ctx.fillText(name,canvas.width/2,180);
-
-    ctx.shadowColor = "#00eaff";
-    ctx.shadowBlur = 20;
-    ctx.fillStyle = "white";
-    ctx.font = "36px Arial";
-    ctx.fillText(id,canvas.width/2,300);
-}
+  }
+});
 </script>
 </body>
 </html>
