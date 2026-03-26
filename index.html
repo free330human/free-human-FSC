@@ -1,45 +1,301 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FSC Official Gateway - מועצת הריבונות החופשית</title>
     <style>
-        :root { --fsc-gold: #c5a059; --fsc-dark: #1a1a1a; --fsc-light: #f4f4f4; }
-        body { background-color: var(--fsc-light); color: var(--fsc-dark); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
-        .fsc-header { background: var(--fsc-dark); color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--fsc-gold); }
-        .fsc-logo { font-size: 2.2em; font-weight: 300; letter-spacing: 4px; margin: 0; text-transform: uppercase; }
-        .subtitle { color: var(--fsc-gold); font-size: 0.9em; margin-top: 5px; opacity: 0.8; }
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        .section { background: white; padding: 30px; border-radius: 2px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border-right: 4px solid var(--fsc-gold); }
-        h2 { border-bottom: 1px solid #eee; padding-bottom: 10px; font-weight: 400; color: #333; }
-        .guide-box { background: #fdfdfd; border: 1px solid #eee; padding: 20px; margin: 20px 0; font-size: 0.95em; }
-        .step { margin-bottom: 15px; }
-        .step-num { font-weight: bold; color: var(--fsc-gold); margin-left: 10px; }
-        .tech-interface { background: #fafafa; border: 1px solid #ddd; padding: 20px; text-align: center; }
-        .id-display { background: #222; color: #eee; padding: 15px; font-family: monospace; font-size: 0.85em; text-align: left; direction: ltr; word-break: break-all; margin-top: 15px; display: none; }
-        .btn { background: var(--fsc-dark); color: white; border: none; padding: 12px 30px; cursor: pointer; text-transform: uppercase; font-size: 0.9em; transition: 0.4s; border: 1px solid transparent; width: 100%; max-width: 350px; text-decoration: none; display: inline-block; }
-        .btn:hover { background: white; color: var(--fsc-dark); border-color: var(--fsc-dark); }
-        .btn-gold { background: var(--fsc-gold); color: white; margin-bottom: 10px; }
-        .links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
-        .link-card { border: 1px solid #eee; padding: 20px; text-decoration: none; color: inherit; text-align: center; transition: 0.3s; background: #fff; border-bottom: 3px solid transparent; }
-        .link-card:hover { border-color: var(--fsc-gold); background: #f9f9f9; border-bottom-color: var(--fsc-gold); }
-        .link-card h4 { margin: 0 0 10px 0; color: var(--fsc-gold); }
-        .telegram-link { grid-column: span 2; border-color: #24A1DE; color: #24A1DE; font-weight: bold; }
-        footer { text-align: center; font-size: 0.8em; color: #888; padding: 40px; }
-  .tiktok-link { 
-    grid-column: span 2; 
-    border-color: var(--fsc-dark); 
-    background: var(--fsc-dark) !important; 
-    color: white !important; 
-}
-.tiktok-link h4 { 
-    color: var(--fsc-gold) !important; 
-}
-.tiktok-link:hover { 
-    border-color: var(--fsc-gold); 
-    opacity: 0.9;
-}
+        :root {
+            --fsc-gold: #c5a059;
+            --fsc-dark: #1a1a1a;
+            --fsc-light: #f4f4f4;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--fsc-light);
+            color: var(--fsc-dark);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .fsc-header {
+            background: var(--fsc-dark);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--fsc-gold);
+        }
+
+        .fsc-logo {
+            font-size: 2.2em;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            color: var(--fsc-gold);
+            font-size: 0.9em;
+            margin-top: 5px;
+            opacity: 0.85;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px 40px;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-right: 4px solid var(--fsc-gold);
+        }
+
+        h2, h3 {
+            margin-top: 0;
+        }
+
+        h2 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            font-weight: 400;
+            color: #333;
+        }
+
+        .guide-box {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            padding: 20px;
+            margin: 20px 0 0;
+            font-size: 0.95em;
+            border-radius: 6px;
+        }
+
+        .step {
+            margin-bottom: 15px;
+        }
+
+        .step-num {
+            font-weight: bold;
+            color: var(--fsc-gold);
+            margin-left: 10px;
+        }
+
+        .tech-interface {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .id-display {
+            background: #222;
+            color: #eee;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 0.85em;
+            text-align: left;
+            direction: ltr;
+            word-break: break-all;
+            margin-top: 15px;
+            display: none;
+            border-radius: 6px;
+        }
+
+        .btn {
+            background: var(--fsc-dark);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            transition: 0.3s;
+            border: 1px solid transparent;
+            width: 100%;
+            max-width: 350px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background: white;
+            color: var(--fsc-dark);
+            border-color: var(--fsc-dark);
+        }
+
+        .btn-gold {
+            background: var(--fsc-gold);
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .link-card {
+            border: 1px solid #eee;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            text-align: center;
+            transition: 0.3s;
+            background: #fff;
+            border-bottom: 3px solid transparent;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .link-card:hover {
+            border-color: var(--fsc-gold);
+            background: #f9f9f9;
+            border-bottom-color: var(--fsc-gold);
+        }
+
+        .link-card h4 {
+            margin: 0 0 10px 0;
+            color: var(--fsc-gold);
+        }
+
+        .telegram-link {
+            grid-column: span 2;
+            border-color: #24A1DE;
+            color: #24A1DE;
+            font-weight: bold;
+        }
+
+        .tiktok-link {
+            grid-column: span 2;
+            border-color: var(--fsc-dark);
+            background: var(--fsc-dark);
+            color: white;
+        }
+
+        .tiktok-link h4 {
+            color: var(--fsc-gold);
+        }
+
+        .tiktok-link:hover {
+            border-color: var(--fsc-gold);
+            opacity: 0.92;
+            background: var(--fsc-dark);
+            color: white;
+        }
+
+        .archive-card {
+            background: #1e1e1e;
+            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 12px;
+            border-right: 5px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s, background 0.2s;
+            color: #e0e0e0;
+        }
+
+        .archive-card:hover {
+            transform: translateY(-3px);
+            background: #252525;
+        }
+
+        .archive-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .archive-desc {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 18px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            flex: 1;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            transition: 0.3s;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            min-width: 140px;
+        }
+
+        .view-btn {
+            background: #d4af37;
+            color: #000;
+        }
+
+        .view-btn:hover {
+            background: #f1c40f;
+        }
+
+        .down-btn {
+            background: #333;
+            color: #fff;
+        }
+
+        .down-btn:hover {
+            background: #444;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8em;
+            color: #888;
+            padding: 20px 10px 40px;
+        }
+
+        @media (max-width: 700px) {
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .telegram-link,
+            .tiktok-link {
+                grid-column: span 1;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -50,12 +306,11 @@
 </header>
 
 <div class="container">
-    
-    <!-- הסבר למשתמש -->
+
     <div class="section">
         <h2>📜 אבטחת זהות וריבונות: פרוטוקול FSC-01</h2>
         <p>מועצת הריבונות החופשית פועלת לביסוס אוטונומיה אישית מוחלטת. כחלק מפעילות זו, המועצה מאשרת את השימוש בתשתית הצפנה מקומית ליצירת זהות שאינה ניתנת לזיוף או למחיקה.</p>
-        
+
         <div class="guide-box">
             <div class="step"><span class="step-num">01.</span> <strong>יצירת מפתחות:</strong> המערכת מייצרת שני מפתחות הצפנה. המפתח הציבורי (Public) הוא ה"זהות" שלך. המפתח הפרטי (Private) הוא ה"חתימה" שלך.</div>
             <div class="step"><span class="step-num">02.</span> <strong>אבטחה מקומית:</strong> התהליך מתבצע בדפדפן שלך בלבד. שום מידע לא עובר לשרתים חיצוניים. הזהות שלך נשארת בשליטתך הבלעדית.</div>
@@ -63,12 +318,11 @@
         </div>
     </div>
 
-    <!-- הנפקת זהות -->
     <div class="section tech-interface">
         <h3>הנפקת זהות ריבונית</h3>
         <p>לחץ להפעלת פרוטוקול ההנפקה המאובטח</p>
         <button class="btn btn-gold" onclick="generateKeys()">Initialize Identity Protocol</button>
-        
+
         <div id="idOutput" class="id-display">
             <div style="color: var(--fsc-gold); margin-bottom: 10px;">// FSC IDENTITY GENERATED SUCCESSFULLY</div>
             <strong>PUBLIC KEY (Share this):</strong><br><span id="pubKey"></span><br><br>
@@ -76,152 +330,109 @@
         </div>
     </div>
 
-    <!-- רישום ואישור -->
     <div class="section" style="text-align: center;">
         <h3>אישור ועגינה במטה</h3>
         <p>שליחת המפתח הציבורי להכרה רשמית במסד הנתונים של ה-FSC</p>
         <button class="btn" onclick="registerSovereign()">Register to FSC Base</button>
-    </div> 
-  <!DOCTYPE html>
-<html dir="rtl" lang="he">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ארכיון הפרוטוקולים הרשמי - FSC</title>
-    <style>
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: #121212; color: #e0e0e0; margin: 0; padding: 20px; line-height: 1.6; }
-        .container { max-width: 800px; margin: auto; }
-        .header { text-align: center; padding: 40px 0; border-bottom: 2px solid #d4af37; margin-bottom: 30px; }
-        h1 { color: #d4af37; margin: 0; font-size: 2.2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-        .doc-card { background: #1e1e1e; margin-bottom: 20px; padding: 25px; border-radius: 12px; border-right: 5px solid #d4af37; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.2s; }
-        .doc-card:hover { transform: translateY(-3px); background: #252525; }
-        .doc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .doc-title { font-size: 1.3rem; font-weight: bold; color: #fff; }
-        .doc-desc { color: #aaa; font-size: 0.95rem; margin-bottom: 20px; }
-        .actions { display: flex; gap: 12px; }
-        .btn { flex: 1; text-decoration: none; padding: 12px; border-radius: 6px; text-align: center; font-weight: bold; transition: 0.3s; font-size: 1rem; border: none; cursor: pointer; }
-        .view-btn { background: #d4af37; color: #000; }
-        .view-btn:hover { background: #f1c40f; }
-        .down-btn { background: #333; color: #fff; }
-        .down-btn:hover { background: #444; }
-        .back-link { display: block; text-align: center; margin-top: 40px; color: #d4af37; text-decoration: none; font-weight: bold; }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <div class="header">
-        <h1>📜 ארכיון המסמכים הרשמי</h1>
-        <p>מרכז הידע והפרוטוקולים של הארגון</p>
     </div>
 
-    <!-- 1. בראשית - היסוד -->
-    <div class="doc-card">
-        <div class="doc-header"><div class="doc-title">🌱 01. בראשית</div></div>
-        <div class="doc-desc">מסמך היסוד וההתחלה של התהליך.</div>
-        <div class="actions">
-            <a href="https://drive.google.com/file/d/1wgB8QjCHJFUCUJ8VTQqTJiFbHclQ7B0q/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
-            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+    <div class="section">
+        <h2>📜 ארכיון המסמכים הרשמי</h2>
+
+        <div class="archive-card">
+            <div class="archive-title">🌱 01. בראשית</div>
+            <div class="archive-desc">מסמך היסוד וההתחלה של התהליך.</div>
+            <div class="actions">
+                <a href="https://drive.google.com/file/d/1wgB8QjCHJFUCUJ8VTQqTJiFbHclQ7B0q/view" target="_blank" class="action-btn view-btn">👁️ צפייה</a>
+                <a href="https://drive.google.com" target="_blank" class="action-btn down-btn">📥 הורדה</a>
+            </div>
         </div>
-    </div>
 
-    <!-- 2. דף הבית - הקשר -->
-    <div class="doc-card">
-        <div class="doc-header"><div class="doc-title">🏠 02. דף הבית</div></div>
-        <div class="doc-desc">ריכוז המידע המרכזי למשתמש החדש.</div>
-        <div class="actions">
-            <a href="https://drive.google.com/file/d/1b48b5BP2O4RGWaDpiVwFiMsshQhIeywS/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
-            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+        <div class="archive-card">
+            <div class="archive-title">🏠 02. דף הבית</div>
+            <div class="archive-desc">ריכוז המידע המרכזי למשתמש החדש.</div>
+            <div class="actions">
+                <a href="https://drive.google.com/file/d/1b48b5BP2O4RGWaDpiVwFiMsshQhIeywS/view" target="_blank" class="action-btn view-btn">👁️ צפייה</a>
+                <a href="https://drive.google.com" target="_blank" class="action-btn down-btn">📥 הורדה</a>
+            </div>
         </div>
-    </div>
 
-    <!-- 3. תעודת ריבונות - הזיהוי -->
-    <div class="doc-card">
-        <div class="doc-header"><div class="doc-title">🆔 03. תעודת ריבונות</div></div>
-        <div class="doc-desc">מסמך המגדיר את מעמד הריבונות והזיהוי.</div>
-        <div class="actions">
-            <a href="https://drive.google.com/file/d/1VTHOeK5qDuaDPnb_t2myS5-PODMrobLK/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
-            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+        <div class="archive-card">
+            <div class="archive-title">🆔 03. תעודת ריבונות</div>
+            <div class="archive-desc">מסמך המגדיר את מעמד הריבונות והזיהוי.</div>
+            <div class="actions">
+                <a href="https://drive.google.com/file/d/1VTHOeK5qDuaDPnb_t2myS5-PODMrobLK/view" target="_blank" class="action-btn view-btn">👁️ צפייה</a>
+                <a href="https://drive.google.com" target="_blank" class="action-btn down-btn">📥 הורדה</a>
+            </div>
         </div>
-    </div>
 
-    <!-- 4. פרוטוקול השחרור - התהליך -->
-    <div class="doc-card">
-        <div class="doc-header"><div class="doc-title">📦 04. פרוטוקול השחרור</div></div>
-        <div class="doc-desc">הנחיות לביצוע תהליך השחרור המלא.</div>
-        <div class="actions">
-            <a href="https://drive.google.com/file/d/1wiYtG7B5AtINil5FCD7dtfVqk0LU85H4/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
-            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+        <div class="archive-card">
+            <div class="archive-title">📦 04. פרוטוקול השחרור</div>
+            <div class="archive-desc">הנחיות לביצוע תהליך השחרור המלא.</div>
+            <div class="actions">
+                <a href="https://drive.google.com/file/d/1wiYtG7B5AtINil5FCD7dtfVqk0LU85H4/view" target="_blank" class="action-btn view-btn">👁️ צפייה</a>
+                <a href="https://drive.google.com" target="_blank" class="action-btn down-btn">📥 הורדה</a>
+            </div>
         </div>
-    </div>
 
-    <!-- 5. איפוס מערכת - טכני -->
-    <div class="doc-card">
-        <div class="doc-header"><div class="doc-title">⚙️ 05. איפוס מערכת</div></div>
-        <div class="doc-desc">מדריך לביצוע איפוס מערכתי.</div>
-        <div class="actions">
-            <a href="https://drive.google.com/file/d/1L6QcyH24zQdKDOa4Y5JOR6xSkRI1GquQ/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
-            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+        <div class="archive-card">
+            <div class="archive-title">⚙️ 05. איפוס מערכת</div>
+            <div class="archive-desc">מדריך לביצוע איפוס מערכתי.</div>
+            <div class="actions">
+                <a href="https://drive.google.com/file/d/1L6QcyH24zQdKDOa4Y5JOR6xSkRI1GquQ/view" target="_blank" class="action-btn view-btn">👁️ צפייה</a>
+                <a href="https://drive.google.com" target="_blank" class="action-btn down-btn">📥 הורדה</a>
+            </div>
         </div>
-    </div>
 
-    <!-- 6. עין פקוחה - המודעות -->
-    <div class="doc-card">
-        <div class="doc-header"><div class="doc-title">👁️ 06. עין פקוחה</div></div>
-        <div class="doc-desc">פרוטוקול המודעות והשמירה על החופש.</div>
-        <div class="actions">
-            <a href="https://drive.google.com/file/d/1Be4pkFR99GW-vbJxO1b4qNneQ4ym3xwF/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
-            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+        <div class="archive-card">
+            <div class="archive-title">👁️ 06. עין פקוחה</div>
+            <div class="archive-desc">פרוטוקול המודעות והשמירה על החופש.</div>
+            <div class="actions">
+                <a href="https://drive.google.com/file/d/1Be4pkFR99GW-vbJxO1b4qNneQ4ym3xwF/view" target="_blank" class="action-btn view-btn">👁️ צפייה</a>
+                <a href="https://drive.google.com" target="_blank" class="action-btn down-btn">📥 הורדה</a>
+            </div>
         </div>
-    </div>
 
-    <!-- 7. רשת הסיירים - קהילה -->
-    <div class="doc-card">
-        <div class="doc-header"><div class="doc-title">🤝 07. רשת הסיירים</div></div>
-        <div class="doc-desc">הנחיות לפעולה בתוך רשת הסיירים הקהילתית.</div>
-        <div class="actions">
-            <a href="https://drive.google.com/file/d/1jATeWvep-8QiqfuRJoanVZpWldGTjtZA/view" target="_blank" class="btn view-btn">👁️ צפייה</a>
-            <a href="https://drive.google.com" class="btn down-btn">📥 הורדה</a>
+        <div class="archive-card">
+            <div class="archive-title">🤝 07. רשת הסיירים</div>
+            <div class="archive-desc">הנחיות לפעולה בתוך רשת הסיירים הקהילתית.</div>
+            <div class="actions">
+                <a href="https://drive.google.com/file/d/1jATeWvep-8QiqfuRJoanVZpWldGTjtZA/view" target="_blank" class="action-btn view-btn">👁️ צפייה</a>
+                <a href="https://drive.google.com" target="_blank" class="action-btn down-btn">📥 הורדה</a>
+            </div>
         </div>
+
+        <a href="index.html" class="back-link">← חזרה לדף הבית</a>
     </div>
 
-    <a href="index.html" class="back-link">← חזרה לדף הבית</a>
-</div>
-
-</body>
-</html>
-
-</div>
-
-
-    <!-- חלק חדש: אמנות ותקשורת -->
     <div class="section">
         <h2>📂 ארכיון רשמי וערוצי קשר</h2>
+
         <div class="links-grid">
-            <!-- אמנת הריבונות -->
             <a href="https://drive.proton.me/urls/G30K9J9YQ0#C5jYVki2FAes" target="_blank" class="link-card">
                 <h4>🦅 אמנת הריבונות</h4>
                 <p style="font-size: 0.85em;">אמנת הריבונות החופשית</p>
             </a>
-            <!-- אמנת הביטחון -->
+
             <a href="https://drive.proton.me/urls/F20CDQPETW#KAqfcs5FzBfe" target="_blank" class="link-card">
                 <h4>🛡️ אמנת הביטחון</h4>
                 <p style="font-size: 0.85em;">פרוטוקול ההגנה המשותף</p>
             </a>
-            <!-- טלגרם - כאן להחליף קישור! -->
+
             <a href="https://t.me/HumanFreedomIL" target="_blank" class="link-card telegram-link">
                 📱 ערוץ הטלגרם הרשמי - עדכונים בזמן אמת
-          <!-- טיקטוק רשמי - FSC -->
-<a href="https://www.tiktok.com/@fsc33council?_r=1&_t=ZS-94zjE07WpJo" target="_blank" class="link-card tiktok-link">
-    <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-        <svg viewBox="0 0 448 512" width="18" height="18" fill="currentColor"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
-        <h4 style="margin:0;">TikTok הרשמי - המטה המרכזי</h4>
-    </div>
-</a>
+            </a>
+
+            <a href="https://www.tiktok.com/@fsc33council?_r=1&_t=ZS-94zjE07WpJo" target="_blank" class="link-card tiktok-link">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <svg viewBox="0 0 448 512" width="18" height="18" fill="currentColor" aria-hidden="true">
+                        <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path>
+                    </svg>
+                    <h4 style="margin:0;">TikTok הרשמי - המטה המרכזי</h4>
+                </div>
             </a>
         </div>
     </div>
-
 </div>
 
 <footer>
@@ -230,21 +441,37 @@
 
 <script>
     function generateKeys() {
-        const pub = "FSC-ID-" + Math.random().toString(36).substr(2, 10).toUpperCase();
-        const priv = "FSC-SEC-" + btoa(Math.random().toString()).substr(10, 32);
+        const array = new Uint8Array(8);
+        crypto.getRandomValues(array);
+        const pub = "FSC-ID-" + Array.from(array, b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
+
+        const privArray = new Uint8Array(16);
+        crypto.getRandomValues(privArray);
+        const priv = "FSC-SEC-" + Array.from(privArray, b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
+
         document.getElementById('pubKey').innerText = pub;
         document.getElementById('privKey').innerText = priv;
         document.getElementById('idOutput').style.display = 'block';
-        alert("פרוטוקול הושלם: הזהות נוצרה ומאובטחת במכשירך.");
+
+        alert("הפרוטוקול הושלם: הזהות נוצרה ומאובטחת במכשירך.");
     }
+
     function registerSovereign() {
         const pubKey = document.getElementById('pubKey').innerText;
-        if (!pubKey) { alert("שגיאה: יש להנפיק זהות לפני הרישום."); return; }
+
+        if (!pubKey) {
+            alert("שגיאה: יש להנפיק זהות לפני הרישום.");
+            return;
+        }
+
         const email = "fscsovereignty@substack.com";
         const subject = "FSC Sovereign Registration";
         const body = "I hereby register my sovereignty. Public Key: " + pubKey;
-        window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        window.location.href =
+            `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
 </script>
+
 </body>
 </html>
